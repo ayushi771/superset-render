@@ -3,6 +3,8 @@ FROM apache/superset:latest
 USER root
 
 RUN pip install psycopg2-binary
+RUN pip install sqlalchemy-redshift
+RUN pip install sqlalchemy-postgresql
 
 COPY superset_config.py /app/pythonpath/
 
