@@ -16,15 +16,5 @@ USER superset
 
 EXPOSE 8088
 
-CMD ["bash", "-c", "
-set -e;
-
-superset db upgrade;
-
-gunicorn \
-  -w 2 \
-  -k gevent \
-  --timeout 120 \
-  --bind 0.0.0.0:8088 \
-  'superset.app:create_app()'
-"]
+# ✅ FIXED SINGLE LINE CMD
+CMD ["bash", "-c", "set -e; superset db upgrade; exec gunicorn -w 2 -k gevent --timeout 120 --bind 0.0.0.0:8088 superset.app:create_app()"]
