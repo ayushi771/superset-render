@@ -1,0 +1,9 @@
+FEATURE_FLAGS = {
+    "EMBEDDED_SUPERSET": True,
+}
+
+PUBLIC_ROLE_LIKE = "Gamma"
+
+AUTH_ROLE_PUBLIC = "Gamma"
+
+SECRET_KEY = "mysecretkey"
