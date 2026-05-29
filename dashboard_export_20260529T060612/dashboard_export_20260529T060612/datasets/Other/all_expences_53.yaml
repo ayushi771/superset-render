@@ -1,0 +1,105 @@
+table_name: all expences
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: herodb
+schema: public
+sql: "SELECT\r\n    CASE\r\n        WHEN category IN (\r\n            'freight_inward',\r\
+  \n            'freight_outward',\r\n            'repairing_expense',\r\n       \
+  \     'business_promotion'\r\n        )\r\n        THEN 'Direct Expense'\r\n\r\n\
+  \        WHEN category IN (\r\n            'emp_benefit',\r\n            'premises_expense',\r\
+  \n            'legal_professional',\r\n            'travelling_expense',\r\n   \
+  \         'other_expense'\r\n        )\r\n        THEN 'Indirect Expense'\r\n\r\n\
+  \        WHEN category = 'ho_expenses'\r\n        THEN 'HO Expenses'\r\n\r\n   \
+  \     WHEN category = 'finance_cost'\r\n        THEN 'Finance Cost'\r\n    END AS\
+  \ expense_type,\r\n\r\n    category AS sub_category,\r\n\r\n    SUM(amount) AS total_amount,\r\
+  \n\r\n    CASE\r\n        WHEN category IN (\r\n            'emp_benefit',\r\n \
+  \           'premises_expense',\r\n            'legal_professional',\r\n       \
+  \     'travelling_expense',\r\n            'other_expense'\r\n        ) THEN '1_Indirect'\r\
+  \n\r\n        WHEN category IN (\r\n            'freight_inward',\r\n          \
+  \  'freight_outward',\r\n            'repairing_expense',\r\n            'business_promotion'\r\
+  \n        ) THEN '2_Direct'\r\n\r\n        WHEN category = 'ho_expenses'\r\n   \
+  \     THEN '3_HO'\r\n\r\n        WHEN category = 'finance_cost'\r\n        THEN\
+  \ '4_Finance'\r\n    END AS sort_group\r\n\r\nFROM fact_financials\r\n\r\nWHERE\
+  \ period_month = '2026-03-01'\r\n\r\nAND category IN (\r\n    'freight_inward',\r\
+  \n    'freight_outward',\r\n    'repairing_expense',\r\n    'business_promotion',\r\
+  \n    'emp_benefit',\r\n    'premises_expense',\r\n    'legal_professional',\r\n\
+  \    'travelling_expense',\r\n    'other_expense',\r\n    'ho_expenses',\r\n   \
+  \ 'finance_cost'\r\n)\r\n\r\nGROUP BY\r\n    expense_type,\r\n    category,\r\n\
+  \    sort_group\r\n\r\nORDER BY\r\n    sort_group,\r\n    total_amount DESC;"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: d8ac783a-7ffa-44ab-a840-51ce802f4ee3
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: total_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: sub_category
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: expense_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: sort_group
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 3efee4cd-2059-42b3-92d7-dc64f20d71ac

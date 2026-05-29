@@ -1,0 +1,107 @@
+table_name: Query public.all expences 05/26/2026 17:19:01
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: herodb
+schema: public
+sql: "SELECT\r\n  particulars AS particulars,\r\n  display_value AS display_value\r\
+  \nFROM (\r\n  WITH base AS (\r\n\r\n    /* NORMAL ROWS */\r\n    SELECT\r\n    \
+  \  category_label AS particulars,\r\n\r\n      CASE\r\n        WHEN category = 'cost_of_sales'\r\
+  \n        THEN -amount\r\n        ELSE amount\r\n      END AS signed_amount,\r\n\
+  \r\n      category\r\n\r\n    FROM fact_financials\r\n\r\n    WHERE period_month\
+  \ = '2026-03-01'\r\n\r\n    AND category IN (\r\n      'sales',\r\n      'cost_of_sales',\r\
+  \n      'direct_income',\r\n      'other_income',\r\n      'gross_profit'\r\n  \
+  \  )\r\n\r\n    UNION ALL\r\n\r\n    /* COMBINED DIRECT EXPENSE */\r\n    SELECT\r\
+  \n      'Direct Expense' AS particulars,\r\n\r\n      -SUM(amount) AS signed_amount,\r\
+  \n\r\n      'direct_expense_total' AS category\r\n\r\n    FROM fact_financials\r\
+  \n\r\n    WHERE period_month = '2026-03-01'\r\n\r\n    AND category IN (\r\n   \
+  \   'freight_inward',\r\n      'freight_outward',\r\n      'repairing_expense',\r\
+  \n      'business_promotion',\r\n      'incentive'\r\n    )\r\n  )\r\n\r\n  SELECT\r\
+  \n    particulars,\r\n\r\n    signed_amount AS amount,\r\n\r\n    ROUND(\r\n   \
+  \   signed_amount * 100.0 /\r\n      MAX(CASE WHEN category = 'sales' THEN signed_amount\
+  \ END) OVER (),\r\n    2) AS percentage,\r\n\r\n    CASE\r\n\r\n      /* FINAL GROSS\
+  \ PROFIT */\r\n      WHEN category = 'gross_profit'\r\n      THEN CONCAT(\r\n  \
+  \      '<div style=\"\r\n            text-align:right;\r\n            background:#f4fdf4;\r\
+  \n            padding:6px 8px;\r\n            border-radius:7px;\r\n           \
+  \ border-left:4px solid #28a745;\r\n        \">',\r\n\r\n        '<div style=\"\r\
+  \n            font-size:10px;\r\n            color:#666;\r\n            font-weight:600;\r\
+  \n            letter-spacing:0.3px;\r\n        \">FINAL GROSS PROFIT</div>',\r\n\
+  \r\n        '<div style=\"\r\n            font-size:20px;\r\n            font-weight:bold;\r\
+  \n            color:#1e7e34;\r\n            margin-top:1px;\r\n        \">\u20B9\
+  ',\r\n        TO_CHAR(signed_amount, 'FM9,99,99,999'),\r\n        '</div>',\r\n\r\
+  \n        '<div style=\"\r\n            font-size:11px;\r\n            color:#555;\r\
+  \n            margin-top:1px;\r\n        \">',\r\n        ROUND(\r\n          signed_amount\
+  \ * 100.0 /\r\n          MAX(CASE WHEN category = 'sales' THEN signed_amount END)\
+  \ OVER (),\r\n        2),\r\n        '% of Sales</div></div>'\r\n      )\r\n\r\n\
+  \      /* NEGATIVE VALUES */\r\n      WHEN signed_amount < 0\r\n      THEN CONCAT(\r\
+  \n        '<div style=\"\r\n            text-align:right;\r\n            padding:4px\
+  \ 6px;\r\n        \">',\r\n\r\n        '<div style=\"\r\n            font-size:18px;\r\
+  \n            font-weight:bold;\r\n            color:#dc3545;\r\n        \">\u20B9\
+  ',\r\n        TO_CHAR(signed_amount, 'FM9,99,99,999'),\r\n        '</div>',\r\n\r\
+  \n        '<div style=\"\r\n            font-size:10px;\r\n            color:#dc3545;\r\
+  \n            margin-top:1px;\r\n        \">',\r\n        ROUND(\r\n          signed_amount\
+  \ * 100.0 /\r\n          MAX(CASE WHEN category = 'sales' THEN signed_amount END)\
+  \ OVER (),\r\n        2),\r\n        '% of Sales</div></div>'\r\n      )\r\n\r\n\
+  \      /* NORMAL VALUES */\r\n      ELSE CONCAT(\r\n        '<div style=\"text-align:right;\"\
+  >',\r\n\r\n        '<div style=\"\r\n            font-size:18px;\r\n           \
+  \ font-weight:bold;\r\n        \">\u20B9',\r\n        TO_CHAR(signed_amount, 'FM9,99,99,999'),\r\
+  \n        '</div>',\r\n\r\n        '<div style=\"\r\n            font-size:10px;\r\
+  \n            color:gray;\r\n        \">',\r\n        ROUND(\r\n          signed_amount\
+  \ * 100.0 /\r\n          MAX(CASE WHEN category = 'sales' THEN signed_amount END)\
+  \ OVER (),\r\n        2),\r\n        '%</div></div>'\r\n      )\r\n\r\n    END AS\
+  \ display_value\r\n\r\n  FROM base\r\n\r\n  ORDER BY\r\n    CASE\r\n      WHEN category\
+  \ = 'sales' THEN 1\r\n      WHEN category = 'cost_of_sales' THEN 2\r\n      WHEN\
+  \ category = 'direct_expense_total' THEN 3\r\n      WHEN category = 'direct_income'\
+  \ THEN 4\r\n      WHEN category = 'other_income' THEN 5\r\n      WHEN category =\
+  \ 'gross_profit' THEN 6\r\n    END\r\n\r\n) AS virtual_table\r\n\r\nLIMIT 1000;"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: 8dd17f77-ded7-449f-849c-ee2db0f3dd39
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: display_value
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+- column_name: particulars
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra:
+    warning_markdown: null
+version: 1.0.0
+database_uuid: 3efee4cd-2059-42b3-92d7-dc64f20d71ac

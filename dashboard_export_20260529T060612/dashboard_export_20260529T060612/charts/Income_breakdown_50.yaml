@@ -1,0 +1,46 @@
+slice_name: Income breakdown
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 57__table
+  viz_type: table
+  slice_id: 50
+  query_mode: raw
+  groupby: []
+  temporal_columns_lookup: {}
+  all_columns:
+  - particulars
+  - display_value
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  server_pagination: false
+  row_limit: 1000
+  table_timestamp_format: smart_date
+  page_length: null
+  include_search: false
+  allow_rearrange_columns: true
+  allow_render_html: true
+  column_config:
+    display_value:
+      horizontalAlign: left
+      truncateLongCells: true
+    particulars:
+      horizontalAlign: left
+      truncateLongCells: true
+  show_cell_bars: false
+  align_pn: false
+  color_pn: false
+  comparison_color_scheme: Green
+  conditional_formatting: []
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 9
+query_context: '{"datasource":{"id":57,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["particulars","display_value"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"57__table","viz_type":"table","slice_id":50,"query_mode":"raw","groupby":[],"temporal_columns_lookup":{},"all_columns":["particulars","display_value"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"server_pagination":false,"row_limit":1000,"table_timestamp_format":"smart_date","page_length":null,"include_search":false,"allow_rearrange_columns":true,"allow_render_html":true,"column_config":{"display_value":{"horizontalAlign":"left","truncateLongCells":true},"particulars":{"horizontalAlign":"left","truncateLongCells":true}},"show_cell_bars":false,"align_pn":false,"color_pn":false,"comparison_color_scheme":"Green","conditional_formatting":[],"comparison_type":"values","extra_form_data":{},"dashboards":[9],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 6f261102-38fb-4139-ad99-259dc630b939
+version: 1.0.0
+dataset_uuid: 8dd17f77-ded7-449f-849c-ee2db0f3dd39

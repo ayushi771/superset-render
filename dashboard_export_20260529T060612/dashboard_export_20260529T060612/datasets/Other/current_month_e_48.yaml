@@ -1,0 +1,61 @@
+table_name: current month e
+main_dttm_col: month_date
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: herodb
+schema: public
+sql: "SELECT\r\n  DATE_TRUNC('MONTH', month_date) AS month_date,\r\n  SUM(ebitda)\
+  \ AS \"SUM(ebitda)\"\r\nFROM (\r\n  SELECT\r\n    period_month AS month_date,\r\n\
+  \    TO_CHAR(period_month, 'Mon YYYY') AS period_label,\r\n    SUM(CASE WHEN category\
+  \ = 'ebitda' THEN amount ELSE 0 END) AS ebitda\r\n  FROM fact_financials\r\n  WHERE\r\
+  \n    period_month = '2026-03-01'\r\n  GROUP BY\r\n    period_month\r\n  ORDER BY\r\
+  \n    period_month\r\n) AS virtual_table\r\nGROUP BY\r\n  DATE_TRUNC('MONTH', month_date)\r\
+  \nLIMIT 50000;"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: fd6182c0-b825-4be1-9ab4-96d6097c664d
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: SUM(ebitda)
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: month_date
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIMETZ
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 3efee4cd-2059-42b3-92d7-dc64f20d71ac

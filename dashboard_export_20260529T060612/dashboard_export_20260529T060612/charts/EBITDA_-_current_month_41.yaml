@@ -1,0 +1,72 @@
+slice_name: EBITDA - current month
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number
+params:
+  datasource: 48__table
+  viz_type: big_number
+  slice_id: 41
+  x_axis: month_date
+  time_grain_sqla: P1M
+  aggregation: LAST_VALUE
+  metric:
+    aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: SUM(ebitda)
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 213
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: column
+      type_generic: 0
+      uuid: a29533b6-509b-4fb2-ad22-82506619fd26
+      verbose_name: null
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: SUM(SUM(ebitda))
+    optionName: metric_t45k1686teg_dos204kv28
+    sqlExpression: null
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: month_date
+  show_timestamp: true
+  show_trend_line: false
+  start_y_axis_at_zero: true
+  color_picker:
+    a: 1
+    b: 135
+    g: 122
+    r: 0
+  header_font_size: 0.4
+  subheader_font_size: 0.15
+  subtitle_font_size: 0.15
+  metric_name_font_size: 0.15
+  y_axis_format: ',d'
+  currency_format:
+    symbol: INR
+    symbolPosition: prefix
+  time_format: smart_date
+  rolling_type: None
+  extra_form_data: {}
+  dashboards:
+  - 9
+query_context: '{"datasource":{"id":48,"type":"table"},"force":false,"queries":[{"filters":[{"col":"month_date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"time_grain_sqla":"P1M","having":"","where":""},"applied_time_extras":{},"columns":[{"timeGrain":"P1M","columnType":"BASE_AXIS","sqlExpression":"month_date","label":"month_date","expressionType":"SQL","isColumnReference":true}],"metrics":[{"aggregate":"SUM","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"SUM(ebitda)","description":null,"expression":null,"filterable":true,"groupby":true,"id":213,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"column","type_generic":0,"uuid":"a29533b6-509b-4fb2-ad22-82506619fd26","verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"SUM(SUM(ebitda))","optionName":"metric_t45k1686teg_dos204kv28","sqlExpression":null}],"annotation_layers":[],"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[{"operation":"pivot","options":{"index":["month_date"],"columns":[],"aggregates":{"SUM(SUM(ebitda))":{"operator":"mean"}},"drop_missing_columns":true}},{"operation":"flatten"}]}],"form_data":{"datasource":"48__table","viz_type":"big_number","slice_id":41,"x_axis":"month_date","time_grain_sqla":"P1M","aggregation":"LAST_VALUE","metric":{"aggregate":"SUM","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"SUM(ebitda)","description":null,"expression":null,"filterable":true,"groupby":true,"id":213,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"column","type_generic":0,"uuid":"a29533b6-509b-4fb2-ad22-82506619fd26","verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"SUM(SUM(ebitda))","optionName":"metric_t45k1686teg_dos204kv28","sqlExpression":null},"adhoc_filters":[{"clause":"WHERE","comparator":"No
+  filter","expressionType":"SIMPLE","operator":"TEMPORAL_RANGE","subject":"month_date"}],"show_timestamp":true,"show_trend_line":false,"start_y_axis_at_zero":true,"color_picker":{"a":1,"b":135,"g":122,"r":0},"header_font_size":0.4,"subheader_font_size":0.15,"subtitle_font_size":0.15,"metric_name_font_size":0.15,"y_axis_format":",d","currency_format":{"symbol":"INR","symbolPosition":"prefix"},"time_format":"smart_date","rolling_type":"None","extra_form_data":{},"dashboards":[9],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: cdde74e4-41d9-4e8e-9c74-5c7a2911c689
+version: 1.0.0
+dataset_uuid: fd6182c0-b825-4be1-9ab4-96d6097c664d

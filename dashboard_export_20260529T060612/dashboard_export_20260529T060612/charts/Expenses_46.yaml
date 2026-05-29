@@ -1,0 +1,93 @@
+slice_name: Expenses
+description: null
+certified_by: null
+certification_details: null
+viz_type: echarts_timeseries_bar
+params:
+  datasource: 53__table
+  viz_type: echarts_timeseries_bar
+  slice_id: 46
+  x_axis: expense_type
+  metrics:
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      changed_on: '2026-05-26T16:35:02.956808'
+      column_name: total_amount
+      created_on: '2026-05-26T16:35:02.956807'
+      description: null
+      expression: null
+      extra: null
+      filterable: true
+      groupby: true
+      id: 248
+      is_active: true
+      is_dttm: false
+      python_date_format: null
+      type: DECIMAL
+      type_generic: 0
+      uuid: 627a93e8-3f0f-4e22-bf9d-32a318d8f3c1
+      verbose_name: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: SUM(total_amount)
+    optionName: metric_lxtsghpooz_6qli0bazdpb
+    sqlExpression: null
+  groupby:
+  - sub_category
+  contributionMode: null
+  adhoc_filters: []
+  row_limit: 250
+  truncate_metric: true
+  show_empty_columns: true
+  comparison_type: values
+  annotation_layers: []
+  forecastPeriods: 10
+  forecastInterval: 0.8
+  orientation: vertical
+  x_axis_title: ''
+  x_axis_title_margin: 15
+  y_axis_title: ''
+  y_axis_title_margin: 30
+  y_axis_title_position: Left
+  sort_series_type: sum
+  sort_series_ascending: false
+  color_scheme: supersetColors
+  time_shift_color: true
+  show_value: true
+  stack: Stack
+  only_total: false
+  percentage_threshold: 4
+  minorTicks: false
+  zoomable: false
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  legendMargin: null
+  x_axis_time_format: smart_date
+  xAxisLabelInterval: '0'
+  y_axis_format: ',d'
+  currency_format:
+    symbol: INR
+    symbolPosition: prefix
+  logAxis: false
+  minorSplitLine: true
+  truncateYAxis: false
+  y_axis_bounds:
+  - null
+  - null
+  truncateXAxis: false
+  rich_tooltip: true
+  showTooltipTotal: true
+  showTooltipPercentage: true
+  tooltipSortByMetric: false
+  tooltipTimeFormat: smart_date
+  extra_form_data: {}
+  dashboards:
+  - 9
+query_context: '{"datasource":{"id":53,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[{"columnType":"BASE_AXIS","sqlExpression":"expense_type","label":"expense_type","expressionType":"SQL","isColumnReference":true},"sub_category"],"metrics":[{"aggregate":"SUM","column":{"advanced_data_type":null,"changed_on":"2026-05-26T16:35:02.956808","column_name":"total_amount","created_on":"2026-05-26T16:35:02.956807","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":248,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"DECIMAL","type_generic":0,"uuid":"627a93e8-3f0f-4e22-bf9d-32a318d8f3c1","verbose_name":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"SUM(total_amount)","optionName":"metric_lxtsghpooz_6qli0bazdpb","sqlExpression":null}],"orderby":[[{"aggregate":"SUM","column":{"advanced_data_type":null,"changed_on":"2026-05-26T16:35:02.956808","column_name":"total_amount","created_on":"2026-05-26T16:35:02.956807","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":248,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"DECIMAL","type_generic":0,"uuid":"627a93e8-3f0f-4e22-bf9d-32a318d8f3c1","verbose_name":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"SUM(total_amount)","optionName":"metric_lxtsghpooz_6qli0bazdpb","sqlExpression":null},false]],"annotation_layers":[],"row_limit":250,"series_columns":["sub_category"],"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"time_offsets":[],"post_processing":[{"operation":"pivot","options":{"index":["expense_type"],"columns":["sub_category"],"aggregates":{"SUM(total_amount)":{"operator":"mean"}},"drop_missing_columns":false}},{"operation":"rename","options":{"columns":{"SUM(total_amount)":null},"level":0,"inplace":true}},{"operation":"flatten"}]}],"form_data":{"datasource":"53__table","viz_type":"echarts_timeseries_bar","slice_id":46,"x_axis":"expense_type","metrics":[{"aggregate":"SUM","column":{"advanced_data_type":null,"changed_on":"2026-05-26T16:35:02.956808","column_name":"total_amount","created_on":"2026-05-26T16:35:02.956807","description":null,"expression":null,"extra":null,"filterable":true,"groupby":true,"id":248,"is_active":true,"is_dttm":false,"python_date_format":null,"type":"DECIMAL","type_generic":0,"uuid":"627a93e8-3f0f-4e22-bf9d-32a318d8f3c1","verbose_name":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"SUM(total_amount)","optionName":"metric_lxtsghpooz_6qli0bazdpb","sqlExpression":null}],"groupby":["sub_category"],"contributionMode":null,"adhoc_filters":[],"row_limit":250,"truncate_metric":true,"show_empty_columns":true,"comparison_type":"values","annotation_layers":[],"forecastPeriods":10,"forecastInterval":0.8,"orientation":"vertical","x_axis_title":"","x_axis_title_margin":15,"y_axis_title":"","y_axis_title_margin":30,"y_axis_title_position":"Left","sort_series_type":"sum","sort_series_ascending":false,"color_scheme":"supersetColors","time_shift_color":true,"show_value":true,"stack":"Stack","only_total":false,"percentage_threshold":4,"minorTicks":false,"zoomable":false,"show_legend":true,"legendType":"scroll","legendOrientation":"top","legendMargin":null,"x_axis_time_format":"smart_date","xAxisLabelInterval":"0","y_axis_format":",d","currency_format":{"symbol":"INR","symbolPosition":"prefix"},"logAxis":false,"minorSplitLine":true,"truncateYAxis":false,"y_axis_bounds":[null,null],"truncateXAxis":false,"rich_tooltip":true,"showTooltipTotal":true,"showTooltipPercentage":true,"tooltipSortByMetric":false,"tooltipTimeFormat":"smart_date","extra_form_data":{},"dashboards":[9],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 5b3f162c-2005-4035-bb7c-91e8f60d710f
+version: 1.0.0
+dataset_uuid: d8ac783a-7ffa-44ab-a840-51ce802f4ee3

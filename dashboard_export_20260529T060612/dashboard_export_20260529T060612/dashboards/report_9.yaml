@@ -1,0 +1,327 @@
+dashboard_title: report
+description: null
+css: "/* =========================\r\n   CLEAN PDF-SAFE THEME\r\n   =========================\
+  \ */\r\n\r\n:root {\r\n  --bg: #f6f8fb;\r\n  --card: #ffffff;\r\n  --border: #e5e7eb;\r\
+  \n  --text: #111827;\r\n  --muted: #6b7280;\r\n\r\n  --primary: #6366f1;\r\n  --green:\
+  \ #16a34a;\r\n  --red: #dc2626;\r\n\r\n  --radius: 18px;\r\n\r\n  --shadow:\r\n\
+  \    0 2px 10px rgba(0,0,0,0.04);\r\n}\r\n\r\n/* Dashboard background */\r\n.dashboard\
+  \ {\r\n  background: var(--bg);\r\n}\r\n\r\n/* Card styling */\r\n.slice_container,\r\
+  \n[data-test-chart-id] {\r\n\r\n  background: var(--card) !important;\r\n\r\n  border-radius:\
+  \ var(--radius);\r\n\r\n  border: 1px solid var(--border);\r\n\r\n  box-shadow:\
+  \ var(--shadow);\r\n\r\n  padding: 8px;\r\n\r\n  margin-bottom: 12px;\r\n\r\n  overflow:\
+  \ hidden;\r\n}\r\n\r\n/* Spacing between charts */\r\n.dashboard-component-chart-holder\
+  \ {\r\n  padding: 8px !important;\r\n}\r\n\r\n/* Rows */\r\n.grid-row {\r\n  margin-bottom:\
+  \ 12px;\r\n}\r\n\r\n/* Titles */\r\n.slice_container h1,\r\n.slice_container h2,\r\
+  \n.slice_container h3,\r\n.slice_container h4,\r\n.slice_container .header-title\
+  \ {\r\n\r\n  color: var(--text) !important;\r\n\r\n  font-weight: 600 !important;\r\
+  \n\r\n  letter-spacing: -0.02em;\r\n}\r\n\r\n/* KPI values */\r\n.big-number,\r\n\
+  .header-line,\r\n.metric-value {\r\n\r\n  font-size: 28px !important;\r\n\r\n  font-weight:\
+  \ 700 !important;\r\n\r\n  color: var(--primary) !important;\r\n}\r\n\r\n/* Subtitles\
+  \ */\r\n.subheader,\r\n.subheader-line,\r\n.text-muted,\r\nsmall {\r\n\r\n  color:\
+  \ var(--muted) !important;\r\n}\r\n\r\n/* Negative values */\r\n.negative,\r\n.text-danger\
+  \ {\r\n\r\n  color: var(--red) !important;\r\n}\r\n\r\n/* Positive values */\r\n\
+  .text-success {\r\n\r\n  color: var(--green) !important;\r\n}\r\n\r\n/* Tables */\r\
+  \ntable {\r\n  border-radius: 12px;\r\n  overflow: hidden;\r\n}\r\n\r\n/* Tabs */\r\
+  \n.ant-tabs-tab {\r\n  padding: 10px 16px !important;\r\n}\r\n\r\n.ant-tabs-content-holder\
+  \ {\r\n  padding-top: 12px;\r\n}"
+slug: null
+certified_by: ''
+certification_details: ''
+published: true
+uuid: 84188c77-bc03-4094-aa49-89e377bee04b
+position:
+  CHART--XLCMn3LZTzDLmfpgON7Q:
+    children: []
+    id: CHART--XLCMn3LZTzDLmfpgON7Q
+    meta:
+      chartId: 39
+      height: 25
+      sliceName: gross-profit
+      uuid: c92a999d-f067-466a-a4aa-81210e7c7078
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-E4c19keZR7TSIKGEe91Ns
+    type: CHART
+  CHART-explore-40-1:
+    children: []
+    id: CHART-explore-40-1
+    meta:
+      chartId: 40
+      height: 25
+      sliceName: net_profit
+      uuid: 61ffe1ad-cc5c-4e41-91de-a5bfd1925839
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-E4c19keZR7TSIKGEe91Ns
+    type: CHART
+  CHART-explore-41-1:
+    children: []
+    id: CHART-explore-41-1
+    meta:
+      chartId: 41
+      height: 25
+      sliceName: EBITDA - current month
+      uuid: cdde74e4-41d9-4e8e-9c74-5c7a2911c689
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-E4c19keZR7TSIKGEe91Ns
+    type: CHART
+  CHART-explore-42-1:
+    children: []
+    id: CHART-explore-42-1
+    meta:
+      chartId: 42
+      height: 25
+      sliceName: EBDT - current month
+      uuid: d4e92ade-b55c-4e19-b0e8-e0d3f684f840
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-E4c19keZR7TSIKGEe91Ns
+    type: CHART
+  CHART-explore-46-1:
+    children: []
+    id: CHART-explore-46-1
+    meta:
+      chartId: 46
+      height: 60
+      sliceName: Expenses
+      uuid: 5b3f162c-2005-4035-bb7c-91e8f60d710f
+      width: 7
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-Aw-PnAWKIMVwovjN8hEAd
+    type: CHART
+  CHART-nQjqhKvafdfDe1ZlM2F1V:
+    children: []
+    id: CHART-nQjqhKvafdfDe1ZlM2F1V
+    meta:
+      chartId: 50
+      height: 60
+      sliceName: Income breakdown
+      uuid: 6f261102-38fb-4139-ad99-259dc630b939
+      width: 5
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    - ROW-Aw-PnAWKIMVwovjN8hEAd
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  DIVIDER-XO-QXOiUPi16BjUbHxcVd:
+    children: []
+    id: DIVIDER-XO-QXOiUPi16BjUbHxcVd
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    type: DIVIDER
+  DIVIDER-tgLjEHs2MmdEEmxPT_nej:
+    children: []
+    id: DIVIDER-tgLjEHs2MmdEEmxPT_nej
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    type: DIVIDER
+  GRID_ID:
+    children:
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER-Nr8yzth1Rvec-m45Y8rQX:
+    children: []
+    id: HEADER-Nr8yzth1Rvec-m45Y8rQX
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: Current Month
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    type: HEADER
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: report
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-Aw-PnAWKIMVwovjN8hEAd:
+    children:
+    - CHART-explore-46-1
+    - CHART-nQjqhKvafdfDe1ZlM2F1V
+    id: ROW-Aw-PnAWKIMVwovjN8hEAd
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    type: ROW
+  ROW-E4c19keZR7TSIKGEe91Ns:
+    children:
+    - CHART-explore-40-1
+    - CHART--XLCMn3LZTzDLmfpgON7Q
+    - CHART-explore-42-1
+    - CHART-explore-41-1
+    id: ROW-E4c19keZR7TSIKGEe91Ns
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    type: ROW
+  TAB-BM7wIB8iQNe0zKUzripxK:
+    children:
+    - HEADER-Nr8yzth1Rvec-m45Y8rQX
+    - ROW-E4c19keZR7TSIKGEe91Ns
+    - ROW-Aw-PnAWKIMVwovjN8hEAd
+    - DIVIDER-tgLjEHs2MmdEEmxPT_nej
+    - DIVIDER-XO-QXOiUPi16BjUbHxcVd
+    id: TAB-BM7wIB8iQNe0zKUzripxK
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Main
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-_0-14OTptOVQbnp9L4yEA
+    type: TAB
+  TABS-_0-14OTptOVQbnp9L4yEA:
+    children:
+    - TAB-BM7wIB8iQNe0zKUzripxK
+    id: TABS-_0-14OTptOVQbnp9L4yEA
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+metadata:
+  chart_configuration:
+    '46':
+      id: 46
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 39
+        - 40
+        - 41
+        - 42
+        - 50
+    '50':
+      id: 50
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 39
+        - 40
+        - 41
+        - 42
+        - 46
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 39
+    - 40
+    - 41
+    - 42
+    - 46
+    - 50
+  color_scheme: supersetColors
+  label_colors:
+    Gross Profit: '#22c55e'
+    Net Profit: '#3b82f6'
+    EBITDA: '#a855f7'
+    EBDT: '#f97316'
+  refresh_frequency: 0
+  expanded_slices: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+  color_scheme_domain:
+  - '#1FA8C9'
+  - '#454E7C'
+  - '#5AC189'
+  - '#FF7F44'
+  - '#666666'
+  - '#E04355'
+  - '#FCC700'
+  - '#A868B7'
+  - '#3CCCCB'
+  - '#A38F79'
+  - '#8FD3E4'
+  - '#A1A6BD'
+  - '#ACE1C4'
+  - '#FEC0A1'
+  - '#B2B2B2'
+  - '#EFA1AA'
+  - '#FDE380'
+  - '#D3B3DA'
+  - '#9EE5E5'
+  - '#D1C6BC'
+  shared_label_colors:
+  - Business Promotion
+  - Employee Benefit Expense
+  - Finance Cost
+  - Freight Inward
+  - Freight Outward
+  - HO Expenses
+  - Incentive
+  - Legal & Professional
+  - Other Expenses
+  - Premises Expenses
+  - Repairing Expense
+  - Travelling Expense
+  - finance_cost
+  map_label_colors:
+    ho_expenses: '#1FA8C9'
+    emp_benefit: '#454E7C'
+    other_expense: '#5AC189'
+    freight_outward: '#FF7F44'
+    finance_cost: '#666666'
+    business_promotion: '#E04355'
+    freight_inward: '#FCC700'
+    premises_expense: '#A868B7'
+    travelling_expense: '#3CCCCB'
+    legal_professional: '#A38F79'
+    repairing_expense: '#8FD3E4'
+theme_uuid: null
+version: 1.0.0
