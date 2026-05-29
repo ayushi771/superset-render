@@ -16,4 +16,15 @@ USER superset
 
 EXPOSE 8088
 
-CMD ["bash", "-c", "superset db upgrade && (superset fab create-admin --username admin --firstname admin --lastname admin --email admin@admin.com --password admin || true) && superset init && superset run -h 0.0.0.0 -p 8088"]
+CMD ["bash", "-c", "
+set -e;
+
+superset db upgrade;
+
+gunicorn \
+  -w 2 \
+  -k gevent \
+  --timeout 120 \
+  --bind 0.0.0.0:8088 \
+  'superset.app:create_app()'
+"]
